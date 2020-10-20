@@ -1,0 +1,36 @@
+<table class="table table-striped">
+  <tr>
+    <th>Title</th>
+    <th>Year</th>
+    <th>Select</th>
+  </tr>
+  <tr *ngFor="let data of moviesDB">
+    <td>{{data.title}}</td>
+    <td>{{data.year}}</td>
+    <td><button type="submit" class="btn btn-primary" (click)="onSelectMovie(data)">Select</button></td>
+  </tr>
+</table>
+<table class="table table-striped">
+  <tr>
+    <th>Name</th>
+    <th>Birth Year</th>
+    <th>Select</th>
+  </tr>
+  <tr *ngFor="let item of actorsDB">
+    <td>{{item.name}}</td>
+    <td>{{item.bYear}}</td>
+    <td><button type="submit" class="btn btn-primary" (click)="onSelectActor(item)">Select</button></td>
+  </tr>
+</table>
+<div *ngIf="moviesDB.length>0">
+  <div class="form-group">
+    <label for="movieId">Movie ID</label>
+    <input type="text" class="form-control" id="movId" [(ngModel)]="movSelect">
+  </div>
+  <div *ngIf="actorsDB.length>0" class="form-group">
+    <label for="actorId">Actor ID</label>
+    <input type="text" class="form-control" id="actId" [(ngModel)]="actSelect">
+  </div>
+  <td><button type="submit" class="btn btn-primary" (click)="onAddActor()">Add Actor to Movie</button></td>
+  <td><button type="submit" class="btn btn-primary" (click)="onAddMovie()">Add Movie to Actor</button></td>
+</div>

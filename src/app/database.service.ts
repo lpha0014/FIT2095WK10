@@ -64,4 +64,9 @@ export class DatabaseService {
     let url = "/actor/" + aId + "/" + mId;
     return this.http.post(url, httpOptions);
   }
+
+  errorpg(){
+    let url = "/viewnotfound/";
+    return this.http.post(url, httpOptions);
+  }
 }

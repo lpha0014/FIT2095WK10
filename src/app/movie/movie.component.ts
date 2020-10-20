@@ -40,7 +40,7 @@ export class MovieComponent implements OnInit {
       this.onGetMovies();
     });
   }
-  // Update a Movie
+  // Update a Movie - NOT NEEDED
   onSelectUpdate(item) {
     this.title = item.title;
     this.year = item.year;
@@ -54,14 +54,14 @@ export class MovieComponent implements OnInit {
     });
   }
 
-  //Delete Movie
+  //Delete Movie - Q2 lab
   onDeleteMovie(item) {
     this.dbService.deleteMovie(item._id).subscribe(result => {
       this.onGetMovies();
     });
   }
 
-    //Delete Movie
+    //Delete Movie Q3 lab
     onDeleteaYear() { //qn3
       this.dbService.onDeleteaYear(this.ayear).subscribe(result => {
         this.onGetMovies();
